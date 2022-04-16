@@ -35,7 +35,7 @@ div.calculator{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    align-content: center;
+    align-content: flex-start;
 }
 
 div.screen {
@@ -47,13 +47,45 @@ div.screen {
     align-self: flex-start;
     justify-self: center;
     padding: 0px;
-    margin: 0px;
+    margin: 10px;
 
 
 }
+div.body {
+    height: 270px;
+    width: 300px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-rows: minmax(50px, auto);
+}
 
+button{
+    border-radius: 50px;
+    background-color: #000;
+    font-weight: bold;
+    font-size: 18px;
+    width: 45px;
+    height: 45px;
+}
 
-
+#btn1
+#btn2
+#btn3
+#btn4
+#btn5
+#btn6
+#btn7
+#btn8
+#btn9
+#btn0
+#btnPlus
+#btnMinus
+#btnEqual
+#btnDiv
+#btnMult
+#btnClear
+#btnAC
+#btnPercent
 /*footer*/
 div.footer{
     align-content: center;
