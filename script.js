@@ -37,11 +37,14 @@ function percent(a,b){
 
 //Keyboard Input
 
-/*window.addEventListener("keydown",keyboardInput);
+window.addEventListener("keydown",keyboardInput);
 function keyboardInput(e){
-    if (e.key <= 9 && e.key>=0) addNum(e.key);
-    if
-}*/
+  if (e.key >= 0 && e.key <= 9) addNum(e.key)
+  if (e.key === '.') addDot(decimalBtn.textContent)
+  if (e.key === '=' || e.key === 'Enter') evaluate()
+  if (e.key === 'Backspace') eraser()
+  if (e.key === 'Escape') clearAll()
+}
 
 
 //The button Functions
