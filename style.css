@@ -48,17 +48,35 @@ div.screen {
     justify-self: center;
     padding: 0px;
     margin: 10px;
+    color: #000;
+    margin: 10px;
 
 
 }
 div.input{
-    height: 100px;
+    height: 60px;
     width: 350px;
+    color: #000;
+    border-radius: 25px;
+    padding-right: 10px;
+    font-size: 30px;
+    text-align: right;
+    text-justify: center;
+    font-weight: lighter;
+    margin-top: 15px;
 }
 
 div.answer {
     height: 100px;
     width: 350px;
+    color: #000;
+    border-radius: 25px;
+    font-size: 50px;
+    text-align: right;
+    align-items: center;
+    padding-right: 10px;
+
+
 }
 
 div.body {
