@@ -16,7 +16,6 @@ const screenAnswer = document.getElementById("answer");
 
 // Basic operations
 function add(a,b){
-    if (screenAnswer != "")
     return a+b
 };
 function minus(a,b){
@@ -52,6 +51,10 @@ function eraser(){
 }
 function screenReseter() {
     if (screenInput.textContent == "0") {screenInput.textContent = "";}
+    if (screenAnswer.textContent != "") {
+        screenInput.textContent = screenAnswer.textContent;
+        screenAnswer.textContent = "";
+    }
     else return;
 }
 function addNum(num){
@@ -94,11 +97,11 @@ eraserBtn.onclick = () => {eraser()};
 allClearBtn.onclick= () => {clearAll()}
 equalBtn.onclick= () => {evaluate()}
 
-operatorBtns[0].onclick= () =>{operator(operatorBtns[0].textContent)}
-operatorBtns[1].onclick= () =>{operator(operatorBtns[1].textContent)}
-operatorBtns[2].onclick= () =>{operator(operatorBtns[2].textContent)}
-operatorBtns[3].onclick= () =>{operator(operatorBtns[3].textContent)}
-operatorBtns[4].onclick= () =>{operator(operatorBtns[4].textContent)}
+operatorBtns[0].onclick= () =>{screenReseter();operator(operatorBtns[0].textContent)}
+operatorBtns[1].onclick= () =>{screenReseter();operator(operatorBtns[1].textContent)}
+operatorBtns[2].onclick= () =>{screenReseter();operator(operatorBtns[2].textContent)}
+operatorBtns[3].onclick= () =>{screenReseter();operator(operatorBtns[3].textContent)}
+operatorBtns[4].onclick= () =>{screenReseter();operator(operatorBtns[4].textContent)}
 
 numberBtns[0].onclick= () =>{screenReseter(); addNum(numberBtns[0].textContent)}
 numberBtns[1].onclick= () =>{screenReseter(); addNum(numberBtns[1].textContent)}
