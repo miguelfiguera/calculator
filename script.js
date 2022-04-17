@@ -25,7 +25,10 @@ function multiply(a,b){
     return a*b
 }
 function divide(a,b) {
-    if(b === 0) {return alert("ERROR! Only Chuck Norris can divide by zero!")}
+    if(b === 0) {
+        screenAnswer.textContent = "";
+        screenInput.textContent = "You are not Chuck Norris.";
+        return alert("ERROR! Only Chuck Norris can divide by zero!")}
     return a/b
 }
 function percent(a,b){
@@ -33,6 +36,12 @@ function percent(a,b){
 }
 
 //Keyboard Input
+
+/*window.addEventListener("keydown",keyboardInput);
+function keyboardInput(e){
+    if (e.key <= 9 && e.key>=0) addNum(e.key);
+    if
+}*/
 
 
 //The button Functions
@@ -60,7 +69,12 @@ function screenReseter() {
 function addNum(num){
     screenInput.textContent += num;
 }
-
+function addDot(dot){
+    if(screenInput.textContent == "" || screenInput.textContent == "0"){
+        screenInput.textContent = "0" + dot
+    }
+    else {screenInput.textContent +=dot };
+}
 function operator(operator){
     screenInput.textContent += operator;
 }
@@ -68,34 +82,35 @@ function evaluate(){
     operation = screenInput.textContent
  if (operation.indexOf("+") > -1 ) {
      array = operation.split("+");
-     a =parseInt(array[0],10);
-     b =parseInt(array[1],10);
+     a =parseFloat(array[0]);
+     b =parseFloat(array[1]);
      screenAnswer.textContent= add(a, b);} 
 if (operation.indexOf("-") > -1) {     
     array = operation.split("-");
-    a =parseInt(array[0],10);
-    b =parseInt(array[1],10);
+    a =parseFloat(array[0]);
+    b =parseFloat(array[1]);
     screenAnswer.textContent= minus(a, b);  }
 if (operation.indexOf("*") > -1) {     
     array = operation.split("*");
-    a =parseInt(array[0],10);
-    b =parseInt(array[1],10);
+    a =parseFloat(array[0]);
+    b =parseFloat(array[1]);
     screenAnswer.textContent= multiply(a, b);  }
 if (operation.indexOf("/") > -1){
     array = operation.split("/");
-    a =parseInt(array[0],10);
-    b =parseInt(array[1],10);
+    a =parseFloat(array[0]);
+    b =parseFloat(array[1]);
     screenAnswer.textContent= divide(a, b);  }
 if (operation.indexOf("%") > -1){
     array = operation.split("%");
-    a =parseInt(array[0],10);
-    b =parseInt(array[1],10);
+    a =parseFloat(array[0]);
+    b =parseFloat(array[1]);
     screenAnswer.textContent= percent(a, b);  }
 }
 
 eraserBtn.onclick = () => {eraser()};
 allClearBtn.onclick= () => {clearAll()}
 equalBtn.onclick= () => {evaluate()}
+decimalBtn.onclick= () => {screenReseter();addDot(decimalBtn.textContent)}
 
 operatorBtns[0].onclick= () =>{screenReseter();operator(operatorBtns[0].textContent)}
 operatorBtns[1].onclick= () =>{screenReseter();operator(operatorBtns[1].textContent)}
