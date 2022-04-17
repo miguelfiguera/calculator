@@ -36,14 +36,19 @@ function percent(a,b){
 }
 
 //Keyboard Input
-
+// I learned this watching michalosman code... Thank you my friend!
 window.addEventListener("keydown",keyboardInput);
 function keyboardInput(e){
   if (e.key >= 0 && e.key <= 9) addNum(e.key)
-  if (e.key === '.') addDot(decimalBtn.textContent)
-  if (e.key === '=' || e.key === 'Enter') evaluate()
-  if (e.key === 'Backspace') eraser()
-  if (e.key === 'Escape') clearAll()
+  if (e.key === ".") addDot(decimalBtn.textContent)
+  if (e.key === "=" || e.key === "Enter") evaluate()
+  if (e.key === "Backspace") eraser()
+  if (e.key === "Escape") clearAll()
+  if (e.key === "+") {screenReseter();operator(operatorBtns[0].textContent)}
+  if (e.key === "-"){screenReseter();operator(operatorBtns[1].textContent)}
+  if (e.key === "*"){screenReseter();operator(operatorBtns[2].textContent)}
+  if (e.key === "/") {screenReseter();operator(operatorBtns[3].textContent)}
+  if (e.key === "%")  {screenReseter();operator(operatorBtns[4].textContent)}
 }
 
 
