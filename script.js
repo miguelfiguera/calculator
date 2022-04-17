@@ -16,6 +16,7 @@ const screenAnswer = document.getElementById("answer");
 
 // Basic operations
 function add(a,b){
+    if (screenAnswer != "")
     return a+b
 };
 function minus(a,b){
@@ -45,9 +46,9 @@ function clearAll(){
 }
 
 function eraser(){
-    screenInput.textcontent = screenInput.textContent
-    .toString()
-    .slice(0,-1);
+    theString = screenInput.textContent;
+    newString = theString.slice(0,-1);
+    screenInput.textContent = newString;
 }
 function screenReseter() {
     if (screenInput.textContent == "0") {screenInput.textContent = "";}
